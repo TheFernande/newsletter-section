@@ -1,6 +1,6 @@
 # Live site url
 
-[Live demo](https://hero-section-list.vercel.app/)
+[Live demo](https://newsletter-section-sepia.vercel.app/)
 
 ## Starter project
 
