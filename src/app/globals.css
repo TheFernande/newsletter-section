@@ -67,3 +67,13 @@ h6 {
 #__next {
   isolation: isolate;
 }
+/* Toast Position Styles */
+:root {
+  --toast-top-position: 56px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --toast-top-position: 36px;
+  }
+}

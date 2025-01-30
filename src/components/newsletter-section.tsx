@@ -86,7 +86,7 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
           <div
             className={`${
               t.visible ? "animate-enter" : "animate-leave"
-            } pointer-events-auto flex w-[343px] items-center rounded-full bg-green-50 shadow-lg`}
+            } pointer-events-auto flex w-[343px] flex-row items-center rounded-full bg-green-50 md:w-[499px]`}
           >
             <div className='flex items-center gap-3 py-1 pl-1 pr-[10px]'>
               <p className='rounded-full bg-white px-[10px] py-[2px] text-sm font-medium text-green-700'>
@@ -117,17 +117,17 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
   return (
     <>
       <Toaster
-        position='top-center'
         containerStyle={{
-          top: 40
+          top: "var(--toast-top-position)"
         }}
+        position='top-center'
         toastOptions={{
           duration: 5000
         }}
       />
       <div className='flex size-full flex-col justify-start rounded bg-white align-middle shadow-[0_1px_2px_rgba(0,0,0,0.05)] md:rounded-md md:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] lg:py-[9px] lg:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)]'>
-        <section className='flex w-full flex-col py-12 md:py-20 lg:py-28'>
-          <div className='mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center gap-4 px-4 md:gap-8 lg:flex-row lg:p-24'>
+        <section className='flex w-full flex-col py-8 md:py-16 lg:px-16 lg:py-24'>
+          <div className='mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center gap-4 px-4 md:gap-8 lg:flex-row'>
             <div className='flex w-full flex-col justify-start gap-12 md:gap-16 lg:max-w-[592px]'>
               <div className='flex w-full flex-col gap-8 md:gap-12'>
                 <h1 className='text-3xl font-semibold text-neutral-900 md:text-5xl'>
