@@ -129,7 +129,7 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
         <section className='flex w-full flex-col py-8 md:py-16 lg:px-16 lg:py-24'>
           <div className='mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center gap-4 px-4 md:gap-8 lg:flex-row'>
             <div className='flex w-full flex-col justify-start gap-12 md:gap-16 lg:max-w-[592px]'>
-              <div className='flex w-full flex-col gap-8 md:gap-12'>
+              <div className='flex w-full flex-col gap-8 md:gap-16'>
                 <h1 className='text-3xl font-semibold text-neutral-900 md:text-5xl'>
                   Get the finest curated abstracts delivered weekly&nbsp;to your inbox
                 </h1>
@@ -149,7 +149,7 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
 
               <form
                 onSubmit={handleSubmit}
-                className='flex w-full flex-col items-start gap-4 md:max-w-[704px] md:flex-row md:flex-wrap md:items-center lg:max-w-[592px]'
+                className='flex w-full flex-col items-start gap-3 md:max-w-[704px] md:flex-row md:flex-wrap md:items-center md:gap-4 lg:max-w-[592px]'
               >
                 <div className='flex w-full flex-col gap-2 md:max-w-[334px]'>
                   <input
@@ -157,7 +157,7 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder='Enter your email'
-                    className='order-1 w-full rounded-md rounded-s border border-neutral-200 bg-neutral-50 px-[14px] py-[10px] text-sm'
+                    className='order-1 w-full rounded-md rounded-s border border-neutral-200 bg-neutral-50 px-[14px] py-[10px] text-sm placeholder:text-neutral-500'
                     aria-describedby={error ? "error-message" : undefined}
                   />
                   {error && (
@@ -175,7 +175,7 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
                   variant='primary'
                   disabled={isLoading}
                   className={
-                    "order-4 self-baseline md:order-3 md:max-w-[98px]" +
+                    "order-4 mt-1 self-baseline md:order-3 md:mt-0 md:max-w-[98px]" +
                     (isLoading ? " w-full cursor-not-allowed md:max-w-fit" : "")
                   }
                 >
