@@ -125,7 +125,7 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
           duration: 5000
         }}
       />
-      <div className='flex size-full flex-col justify-start rounded bg-white align-middle shadow-[0_1px_2px_rgba(0,0,0,0.05)] md:rounded-md md:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] lg:py-[9px] lg:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)]'>
+      <div className='flex size-full flex-col justify-start rounded bg-white align-middle shadow-[0_1px_2px_rgba(0,0,0,0.05)] md:rounded-md md:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] lg:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)]'>
         <section className='flex w-full flex-col py-8 md:py-16 lg:px-16 lg:py-24'>
           <div className='mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center gap-4 px-4 md:gap-8 lg:flex-row'>
             <div className='flex w-full flex-col justify-start gap-12 md:gap-16 lg:max-w-[592px]'>
@@ -163,7 +163,7 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
                   {error && (
                     <p
                       id='error-message'
-                      className='text-sm text-red-600'
+                      className='order-2 text-sm text-red-600'
                     >
                       {error}
                     </p>
@@ -174,18 +174,21 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
                   type='submit'
                   variant='primary'
                   disabled={isLoading}
-                  className='order-3 md:order-2 md:max-w-[98px]'
+                  className={
+                    "order-4 self-baseline md:order-3 md:max-w-[98px]" +
+                    (isLoading ? " w-full cursor-not-allowed md:max-w-fit" : "")
+                  }
                 >
                   {isLoading ? "Subscribing..." : "Subscribe"}
                 </Button>
 
-                <span className='order-2 text-base text-neutral-600 md:order-3'>
+                <span className='order-3 text-base text-neutral-600 md:order-4'>
                   We only send you the best! No spam.
                 </span>
               </form>
             </div>
 
-            <div className='relative h-[264px] w-[311px] rounded-lg md:h-[608px] md:w-[704px] lg:w-[696px]'>
+            <div className='relative h-[288px] w-[311px] rounded-lg md:h-[608px] md:w-[688px] lg:w-[592px]'>
               <Image
                 src={imageUrl}
                 alt={alt}
