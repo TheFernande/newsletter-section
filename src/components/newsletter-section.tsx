@@ -127,8 +127,8 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
       />
       <div className='flex size-full flex-col justify-start rounded bg-white align-middle shadow-[0_1px_2px_rgba(0,0,0,0.05)] md:rounded-md md:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] lg:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)]'>
         <section className='flex w-full flex-col py-8 md:py-16 lg:px-16 lg:py-24'>
-          <div className='mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center gap-4 px-4 md:gap-8 lg:flex-row'>
-            <div className='flex w-full flex-col justify-start gap-12 md:gap-16 lg:max-w-[592px]'>
+          <div className='mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center gap-4 px-3 md:gap-8 md:px-4 lg:flex-row'>
+            <div className='flex w-full flex-col justify-start gap-12 lg:max-w-[592px]'>
               <div className='flex w-full flex-col gap-8 md:gap-16'>
                 <h1 className='text-3xl font-semibold text-neutral-900 md:text-5xl'>
                   Get the finest curated abstracts delivered weekly&nbsp;to your inbox

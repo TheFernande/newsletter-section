@@ -1,5 +1,5 @@
 const IconCheckFill = () => (
-  <span className='flex items-center'>
+  <span className='flex min-w-fit items-center'>
     <svg
       width='24'
       height='24'
