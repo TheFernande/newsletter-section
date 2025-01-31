@@ -1,4 +1,3 @@
-import heroPic from "../../public/images/newsletter-section.png";
 import NewsletterSection from "../components/newsletter-section";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
           "Unlock special promotions only for subscribers",
           "Regular doses of artistic inspiration"
         ]}
-        imageUrl={heroPic.src}
         alt='An abstract arty image'
       />
     </main>

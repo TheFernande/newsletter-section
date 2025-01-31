@@ -1,5 +1,8 @@
 "use client";
 
+import heroImageMobile from "../../public/images/newsletter-section-small.png";
+import heroImageTablet from "../../public/images/newsletter-section-mid.png";
+import heroImageDesktop from "../../public/images/newsletter-section.png";
 import Image from "next/image";
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
@@ -7,7 +10,6 @@ import IconCheckFill from "./icons/icon-check-fill";
 
 interface HeroSectionProps {
   bullets: string[];
-  imageUrl: string;
   alt: string;
 }
 
@@ -21,10 +23,9 @@ const Button: React.FC<ButtonProps> = ({ variant, children, className, ...rest }
   return (
     <button
       className={
-        `h-fit w-full rounded px-[14px] py-[10px] text-sm font-medium shadow-[0_1px_3px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.03)] outline-none disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:text-neutral-400 ${
-          variant === "primary"
-            ? "bg-indigo-700 text-white hover:bg-indigo-900 focus:shadow-[0px_0px_3px_4px_rgba(68,76,231,0.12)]"
-            : "bg-white text-neutral-900 hover:bg-neutral-50 focus:shadow-[0px_0px_3px_4px_rgba(68,76,231,0.12)]"
+        `h-fit w-full rounded px-[14px] py-[10px] text-sm font-medium shadow-[0_1px_3px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.03)] outline-none disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:text-neutral-400 ${variant === "primary"
+          ? "bg-indigo-700 text-white hover:bg-indigo-900 focus:shadow-[0px_0px_3px_4px_rgba(68,76,231,0.12)]"
+          : "bg-white text-neutral-900 hover:bg-neutral-50 focus:shadow-[0px_0px_3px_4px_rgba(68,76,231,0.12)]"
         }` +
         " " +
         className
@@ -36,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({ variant, children, className, ...rest }
   );
 };
 
-const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt }) => {
+const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, alt }) => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -84,9 +85,8 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
       toast.custom(
         t => (
           <div
-            className={`${
-              t.visible ? "animate-enter" : "animate-leave"
-            } pointer-events-auto flex w-[343px] flex-row items-center rounded-full bg-green-50 md:w-[499px]`}
+            className={`${t.visible ? "animate-enter" : "animate-leave"
+              } pointer-events-auto flex w-[343px] flex-row items-center rounded-full bg-green-50 md:w-[499px]`}
           >
             <div className='flex items-center gap-3 py-1 pl-1 pr-[10px]'>
               <p className='rounded-full bg-white px-[10px] py-[2px] text-sm font-medium text-green-700'>
@@ -189,12 +189,46 @@ const NewsletterSection: React.FC<HeroSectionProps> = ({ bullets, imageUrl, alt 
             </div>
 
             <div className='relative h-[288px] w-[311px] rounded-lg md:h-[608px] md:w-[688px] lg:w-[592px]'>
-              <Image
-                src={imageUrl}
-                alt={alt}
-                fill
-                style={{ objectFit: "contain" }}
-              />
+              <div className='block md:hidden'>
+                <Image
+                  src={heroImageMobile}
+                  alt={alt}
+                  fill
+                  priority
+                  placeholder='blur'
+                  blurDataURL={heroImageMobile.blurDataURL}
+                  sizes={heroImageMobile.width.toString()}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+
+              {/* Tablet image */}
+              <div className='hidden md:block lg:hidden'>
+                <Image
+                  src={heroImageTablet}
+                  alt={alt}
+                  fill
+                  priority
+                  placeholder='blur'
+                  blurDataURL={heroImageTablet.blurDataURL}
+                  sizes={heroImageTablet.width.toString()}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+
+              {/* Desktop image */}
+              <div className='hidden lg:block'>
+                <Image
+                  src={heroImageDesktop}
+                  alt={alt}
+                  fill
+                  priority
+                  placeholder='blur'
+                  blurDataURL={heroImageDesktop.blurDataURL}
+                  sizes={heroImageDesktop.width.toString()}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
             </div>
           </div>
         </section>
